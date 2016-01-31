@@ -10,6 +10,8 @@ var http = require('http'),
 app.set('views', __dirname + '/public');
 app.engine('.html', require('jade').__express);
 
+app.use(express.static(__dirname + '/public'));
+
 // Allows express to get data from POST requests
 app.use(bodyParser.urlencoded({
     extended: true
@@ -56,7 +58,7 @@ app.post('/add', function(req, res) {
             res.status(500).send("An error has occurred -- " + err);
         }
         else {
-            res.redirect('/?success=true');
+            res.redirect('/');
         }
     });
 });

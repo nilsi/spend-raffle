@@ -2,23 +2,45 @@ doctype html
 html(lang="en")
   head
     title Spend
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700', rel='stylesheet' type='text/css')
+    style.
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            font-family: "Lato", sans-serif;
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid #d8d8d8;
+            line-height: 40px;
+            font-size: 20px;
+            padding-bottom: 4px;
+            margin-right: 10px;
+            font-size: 20px;
+            line-height: 1.2;
+            text-align: left;
+            outline-width: 0;
+        }
+        form {
+            position: absolute;
+            left: 30%;
+            top: 50%;
+            text-align: center;
+        }
+        .button {
+            height: 20px;
+            width: 20px;
+            border-bottom: none;
+            margin-bottom: -10px;
+        }
 
   body
-    h1 Spend Competition
-    p Please add your lottery number and email address to be in the Competition.
-
     form(action="add", method="post")
-        label Email:
-        br
-        input(type="text", name="email")
-        br
-        label Lottery number:
-        br
-        input(type="text", name="number")
-        br
-        input(type="submit", value="Submit")
-        br
-        p(id="success")
+        input(type="text", name="number" placeholder="Code" autocomplete="off" required)
+        input(type="email", name="email" placeholder="E-mail address" autocomplete="off" required)
+        input(class="button" type="image", value="Submit" src="/plane.png")
 
     script.
         function getQueryVariable(variable) {

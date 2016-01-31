@@ -7,4 +7,6 @@ $ npm install
 $ node server.js
 ```
 
+Looks like this:
+
 ![alt tag](http://i.imgur.com/HOavP2X.png)
